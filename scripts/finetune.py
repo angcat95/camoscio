@@ -116,6 +116,8 @@ def train(
         load_in_8bit=True,
         torch_dtype=torch.float16,
         device_map=device_map,
+        offload_folder="offload",
+        low_cpu_mem_usage=True
     )
 
     tokenizer = LlamaTokenizer.from_pretrained(tokenizer_name)
