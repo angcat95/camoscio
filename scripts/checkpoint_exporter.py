@@ -13,13 +13,13 @@ def merge_checkpoints(base_model="decapoda-research/llama-7b-hf", lora_model="te
         base_model,
         load_in_8bit=False,
         torch_dtype=torch.float16,
-        device_map={"": "cpu"},
+        device_map="auto",
     )
 
     model = PeftModel.from_pretrained(
         model,
         lora_model,
-        device_map={"": "cpu"},
+        device_map="auto",
         torch_dtype=torch.float16,
     )
 
